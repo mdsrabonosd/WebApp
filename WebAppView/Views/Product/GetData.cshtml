@@ -1,0 +1,49 @@
+﻿@model WebAppView.ViewModel.Box
+
+<h1 class="alert-danger"> Multiple model Data Passing From Controller To View</h1>
+<br />
+<h1 class="alert-info">Person</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th> Id</th>
+            <th> Name</th>
+            <th> Age</th>
+            <th> Country</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var data in Model.PersonList){
+            <tr>
+                <td>@data.Id</td>
+                <td>@data.Name</td>
+                <td>@data.Age</td>
+                <td>@data.Country</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h1 class="alert-info">Color</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th> Id</th>
+            <th> Code</th>
+            <th> Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var data in Model.ColorList)
+        {
+            <tr>
+                <td>@data.id</td>
+                <td>@data.Code</td>
+                <td>@data.Name</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
