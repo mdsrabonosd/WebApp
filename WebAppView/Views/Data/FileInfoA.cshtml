@@ -1,0 +1,11 @@
+﻿@using System.IO        @* deactive for showing file *@
+@{
+    var folder = @"C:\Users\user\Documents\Materials";
+    string[] files = Directory.GetFiles(folder);
+}
+<h1 class="alert-danger"> File Information</h1>
+
+@foreach(var item in files)
+{
+    <h2 class="alert-info">@item</h2>
+}
