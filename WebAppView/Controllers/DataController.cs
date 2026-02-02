@@ -24,6 +24,7 @@ namespace WebAppView.Controllers
             int i = 1;
             var folder = @"C:\Users\user\Documents\Materials";
             string[] files = Directory.GetFiles(folder);
+
             List<FileInformation> list = new List<FileInformation>();
             foreach (string item in files)
             {
@@ -31,7 +32,11 @@ namespace WebAppView.Controllers
                 Finfo.Id = i;
                 Finfo.FileName=Path.GetFileNameWithoutExtension(item);
                 Finfo.FileExtention=Path.GetExtension(item);
+                Finfo.FilePath = item;
+                Finfo.Filesize = new FileInfo(item).Length;
+                list.Add(Finfo);
             }
+            i++;
             return View();
         }
     }
