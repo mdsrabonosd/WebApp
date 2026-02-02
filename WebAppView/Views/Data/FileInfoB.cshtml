@@ -1,0 +1,32 @@
+﻿@using System.IO
+@{
+    var folder = @"\Users\user\Documents\Materials";
+    string[] files = Directory.GetFiles(folder);
+    int i = 1;        
+
+}
+<table class="table">
+    <thead>
+    <th>#Sl</th>
+    <th>File Name </th>
+    <th>File Extension </th>
+    <th> File Size</th>
+    <th> File path</th>
+    </thead>
+    <tbody>
+        @foreach(var item in files){
+           @*  var fileInfo = new FileInfo(item);
+            var sizeKB = Math.Round(fileInfo.Length / 1024.0, 2); *@
+
+        <tr>
+            <td>@i</td>
+            <td>@System.IO.Path.GetFileNameWithoutExtension(item)</td>
+            <td>@System.IO.Path.GetExtension(item)</td>
+            <td>@(new System.IO.FileInfo(item).Length)</td>
+            @* <td>@sizeKB KB</td *@>
+            <td>@item</td>
+        </tr>
+        i++;
+        }
+    </tbody>
+</table>
