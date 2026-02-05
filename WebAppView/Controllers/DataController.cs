@@ -35,9 +35,10 @@ namespace WebAppView.Controllers
                 Finfo.FilePath = item;
                 Finfo.Filesize = new FileInfo(item).Length;
                 list.Add(Finfo);
+                i++;
             }
-            i++;
-            return View();
+            
+            return View(list);
         }
     }
 }

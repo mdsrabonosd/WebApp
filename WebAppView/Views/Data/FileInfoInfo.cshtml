@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<WebAppView.ViewModel.FileInformation>
 @{
+    string cp = "bg-primary";
+    string cs = "bg-success";
+    string vc = "";
 }
+<table class="table table-bordered">
+    <thead>
+        <th>#Sl</th>
+        <th>File Name </th>
+        <th>File Extension </th>
+        <th> File Size</th>
+        <th> File path</th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if(item.Id % 2 == 0) { vc = cp; } else { vc = cs; }
+            <tr class="@vc">
+                <td>@item.Id</td>
+                <td>@item.FileName</td>
+                <td>@item.FileExtention</td>
+                <td>@item.Filesize</td>
+                <td>@item.FilePath</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
