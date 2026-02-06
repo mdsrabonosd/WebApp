@@ -1,6 +1,6 @@
 ﻿
-
 @model IEnumerable<string>
+<h1 class="@ViewBag.color">@ViewBag.msg</h1>
 @foreach(var item in Model.Reverse()){
     <p>@item</p>
 }
